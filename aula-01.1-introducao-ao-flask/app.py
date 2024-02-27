@@ -1,18 +1,10 @@
 # Importando o Flask na aplicação
-from flask import Flask
+from flask import Flask, render_template
+from controllers import routes
 
 # Carregando o Flask na variável app
-app = Flask(__name__)
-
-# Definindo a rota principal
-@app.route('/')
-def home():
-    # Retorno que será exibido na rota
-    return '<h1>Essa é a homepage!</h1>'
-
-@app.route('/games')
-def games():
-    return '<h1>Bem-vindo a página de games!</h1>'        
+app = Flask(__name__, template_folder='views')
+routes.init_app(app)
 
 # Se for executado diretamente pelo interpretador (arquivo principal)
 if __name__=='__main__':
