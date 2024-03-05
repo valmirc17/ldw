@@ -24,5 +24,24 @@
             <li>{{jogador}}</li>
         {% endfor %}
     </ol>
+    <hr>
+    <p><strong>Jogos:</strong></p>
+    <ol>
+        {% for jogo in jogos %}
+            <li>{{jogo}}</li>
+        {% endfor %}
+    </ol>
+    <hr>
+    <form action="{{url_for('games')}}" method="post">
+        <label for="">Jogador:</label>
+        <input type="text" name="jogador" id="">
+        <input type="submit" name="" id="" value="Entrar">
+    </form>
+    <hr>
+    <form action="{{url_for('games')}}" method="post">
+        <label for="">Título</label>
+        <input type="text" name="jogo">
+        <input type="submit" name="" id="" value="Cadastrar">
+    </form>
 </body>
 </html>
